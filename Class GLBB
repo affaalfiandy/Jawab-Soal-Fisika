@@ -1,0 +1,72 @@
+class GLBB:
+    def __init__(self,kec_awal,kec_akhir,waktu,jarak,perc):
+        self.kec_awal = kec_awal
+        self.waktu = waktu
+        self.kec_akhir = kec_akhir
+        self.jarak = jarak
+        self.perc = perc
+
+    #Jika jarak tidak diketahui alias s = 0
+    def kecepatan_awal1(self):
+        self.hasil = self.kec_akhir - (self.perc * self.waktu)
+        return str(self.hasil)
+
+    #jika kecepatan akhir tidak diketahui alias Vt = 0
+    def kecepatan_awal2(self):
+        self.hasil = (self.jarak - (0.5 * self.perc *(self.waktu**2)) /  self.waktu)
+        return str(self.hasil)
+
+    #Jika waktu tidak ada alias t = 0
+    def kecepatan_awal3(self):
+        self.hasil = ((self.kec_akhir**2)-(2*self.perc*self.jarak)) ** 0.5
+        return str(self.hasil)
+    
+    #Jika jarak tidak diketahui alias jarak = 0
+    def kecepatan_akhir1(self):
+        self.hasil = self.kec_awal + (self.perc * self.waktu)
+        return str(self.hasil)
+
+    #Jika waktu tidak diketahui alias waktu = 0
+    def kecepatan_akhir2(self):
+        self.hasil = ((self.kec_awal**2) + (2 * self.perc * self.jarak)) ** 0.5
+        return str(self.hasil)
+
+    #Jika Jarak tidak ada atau jarak = 0
+    def percepatan1(self):
+        self.hasil = (self.kec_akhir - self.kec_awal) / self.waktu
+        return str(self.hasil)
+    
+    #Jika kecepatan AKhir tidak ada alias Vt = 0 
+    def percepatan2(self):
+        self.hasil = ((self.jarak - (self.kec_awal * self.waktu))* 2) / (self.waktu ** 2)
+        return str(self.hasil)
+    
+    #Jika Waktu tidak ada alios Waktu = 0
+    def percepatan3(self):
+        self.hasil = ((self.kec_akhir ** 2) - (self.kec_awal ** 2)) / (2 * self.jarak)
+        return str(self.hasil)
+
+    #Jika tidak ada jarak alias jarak = 0
+    def waktu1(self):
+        self.hasil = (self.kec_akhir - self.kec_awal) / self.perc
+        return str(self.hasil)
+
+    #Jika Tidak ada kecepatan akhir alias Vt = 0
+    def waktu2(self):
+        self.hasil = f"{self.perc/2}x^2 +{self.kec_awal}x +{self.jarak} || Cari X nya"
+        return self.hasil
+
+    def waktu3(self):
+        self.perc = ((self.kec_akhir ** 2) - (self.kec_awal ** 2)) / (2 * self.jarak)
+        self.hasil = (self.kec_akhir - self.kec_awal) / self.perc
+        return str(self.hasil)
+
+    #Jika Tidak Ada Kecepatan Akhir alias Vt = 0
+    def jarak1(self):
+        self.hasil = (self.kec_awal * self.waktu) + (0.5 * self.perc *(self.waktu**2))
+        return str(self.hasil)
+    
+    #Jika Tidak Ada Waktu alias waktu = 0
+    def jarak2(self):
+        self.hasil = ((self.kec_akhir**2)-(self.kec_awal**2))/(2*self.perc)
+        return str(self.hasil)
