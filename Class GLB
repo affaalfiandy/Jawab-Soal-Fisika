@@ -1,0 +1,17 @@
+class GLB:
+    def __init__(self,kecepatan,jarak,waktu):
+        self.kecepatan = kecepatan
+        self.jarak = jarak
+        self.waktu = waktu
+
+    def get_kecepatan(self):
+        self.hasil = ((self.jarak) / (self.waktu))
+        return str(self.hasil)
+
+    def get_jarak(self):
+        self.hasil = self.kecepatan * self.waktu
+        return str(self.hasil)
+    
+    def get_waktu(self):
+        self.hasil = self.jarak / self.kecepatan
+        return self.hasil
