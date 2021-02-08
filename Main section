@@ -1,0 +1,204 @@
+def main():
+    #Main section
+    Mulai = True
+    hasil_akhir = 0
+    pilihan = 0
+    while Mulai:
+        print("Pilih Pelajaran  :")
+        print("1. GLB")
+        print("2. GLBB")
+        print("3. GJB")
+        print("4. Selesai")
+        pilihan = int(input("Masukkan Nomornya : "))
+        if (pilihan == 1):
+            #Jika tidak ada di soal ketik 0
+            print("Pilih hitung apa = ")
+            print("1. Cari Kecepatan")
+            print("2. Cari jarak")
+            print("3. Cari Waktu")
+            print("4. Keluar")
+            PilihanGLB = int(input("Masukkan Pilihannya "))
+            if(PilihanGLB in range(1,3)):
+                print("================================")
+                print("Jika tidak ada di soal ketik 999")
+                print("================================")
+                Jarak = int(input("Berapa Jaraknya = "))
+                Kecepatan = int(input("Berapa Kecepatannya = "))
+                Waktu = int(input("Berapa lama waktunya = "))
+                hasil_akhir = GLB(Kecepatan,Jarak,Waktu)
+
+                if (PilihanGLB == 1):
+                    jawaban = hasil_akhir.get_kecepatan()
+                    print(jawaban)
+                    continue
+                elif (PilihanGLB == 2):
+                    jawaban = hasil_akhir.get_jarak()
+                    print(jawaban)
+                    continue
+                elif (PilihanGLB == 3):
+                    jawaban = hasil_akhir.get_waktu()
+                    print(jawaban)
+                    continue
+                elif (PilihanGLB == 4):
+                    break
+            elif(PilihanGLB == 4):
+                continue
+            else:
+                print("Masukkan Angka yang benar")
+                continue
+        elif(pilihan == 2):
+            #Jika tidak ada di soal tulis 0
+            print("Pilih hitung apa = ")
+            print("1. Cari Kecepatan Awal")
+            print("2. Cari Kecepatan Akhir")
+            print("3. Cari Percepatan")
+            print("4. Cari Waktu")
+            print("5. Cari Jarak")
+            print("6. Keluar")
+            PilihanGLBB = int(input("Masukkan Pilihan : "))
+            if(PilihanGLBB in range(1,5)):
+                print("================================")
+                print("Jika tidak ada di soal ketik 999")
+                print("================================")
+                Kecepatan_Awal = int(input("Berapa Kecepatan Awalnya = "))
+                Kecepatan_Akhir = int(input("Berapa Kecepatan Akhirnya = "))
+                Percepatan = int(input("Berapa Percepatannya= "))
+                Waktu = int(input("Berapa Lama Waktunya = "))
+                Jarak = int(input("Berapa Panjang Jaraknya = "))
+                hasil_akhir = GLBB(Kecepatan_Awal,Kecepatan_Akhir,Waktu, Jarak, Percepatan)
+                if (PilihanGLBB == 1):
+                    if (Jarak == 999):
+                        Jawaban = hasil_akhir.kecepatan_awal1()
+                        print(Jawaban)
+                        continue
+                    elif (Kecepatan_Akhir == 999):
+                        Jawaban = hasil_akhir.kecepatan_awal2()
+                        print(Jawaban)
+                        continue
+                    elif(Waktu == 999):
+                        Jawaban = hasil_akhir.kecepatan_awal3()
+                        print(Jawaban)
+                        continue
+                elif (PilihanGLBB == 2):
+                    if(Jarak == 999):
+                        Jawaban = hasil_akhir.kecepatan_akhir1()
+                        print(Jawaban)
+                        continue
+                    elif(Waktu == 999):
+                        Jawaban = hasil_akhir.kecepatan_akhir2()
+                        print(Jawaban)
+                        continue
+                elif (PilihanGLBB == 3):
+                    if(Jarak == 999):
+                        Jawaban = hasil_akhir.percepatan1()
+                        print(Jawaban)
+                        continue
+                    elif(Kecepatan_Akhir == 999):
+                        Jawaban = hasil_akhir.percepatan2()
+                        print(Jawaban)
+                        continue
+                    elif(Waktu == 999):
+                        Jawaban = hasil_akhir.percepatan3()
+                        print(Jawaban)
+                        continue
+                elif (PilihanGLBB == 4):
+                    if(Jarak == 999):
+                        Jawaban = hasil_akhir.waktu1()
+                        print(Jawaban)
+                        continue
+                    elif(Kecepatan_Akhir == 999):
+                        Jawaban = hasil_akhir.waktu2()
+                        print(Jawaban)
+                        continue
+                    elif(Percepatan == 999):
+                        Jawaban = hasil_akhir.waktu3()
+                        print(Jawaban)
+
+                elif (PilihanGLBB == 5):
+                    if(Kecepatan_Akhir == 999):
+                        Jawaban = hasil_akhir.jarak1()
+                        print(Jawaban)
+                        continue
+                    elif(Waktu == 999):
+                        Jawaban = hasil_akhir.jarak2()
+                        print(Jawaban)
+                        continue
+                elif (PilihanGLBB == 6):
+                    continue
+            elif(PilihanGLBB == 6):
+                continue
+            else:
+                print("Masukkan Angka Yang Benar")
+                continue
+
+        elif (pilihan == 3):
+            print("Pilih hitung apa = ")
+            print("1. Cari Kecepatan Awal")
+            print("2. Cari Kecepatan Detik ke -n")
+            print("3. Cari Waktu")
+            print("4. Cari Ketinggian")
+            print("5. Keluar")
+            PilihanGJB = int(input("Masukkan Pilihan : "))
+            if(PilihanGJB in range(1,4)):
+                print("================================")
+                print("Jika tidak ada di soal ketik 999")
+                print("================================")
+                Kecepatan_Awal = int(input("Berapa Kecepatan Awalnya = "))
+                Kecepatan_Detik = int(input("Berapa Kecepatan di detik ke -n = "))
+                Percepatan = 10
+                Waktu = int(input("Berapa Lama Waktunya = "))
+                Jarak = int(input("Berapa Tingginya = "))
+                hasil_akhir = GJB(Kecepatan_Awal,Kecepatan_Detik,Waktu, Jarak, Percepatan)
+                if (PilihanGJB == 1):
+                    if (Jarak == 999):
+                        Jawaban = hasil_akhir.kecepatan_awal1()
+                        print(Jawaban)
+                        continue
+                    elif (Kecepatan_Detik == 999):
+                        Jawaban = hasil_akhir.kecepatan_awal2()
+                        print(Jawaban)
+                        continue
+                    elif(Waktu == 999):
+                        Jawaban = hasil_akhir.kecepatan_awal3()
+                        print(Jawaban)
+                        continue
+                elif (PilihanGJB == 2):
+                    if(Jarak == 999):
+                        Jawaban = hasil_akhir.kecepatan_detik1()
+                        print(Jawaban)
+                        continue
+                    elif(Waktu == 999):
+                        Jawaban = hasil_akhir.kecepatan_detik2()
+                        print(Jawaban)
+                        continue
+                elif (PilihanGJB == 3):
+                    if(Jarak == 999):
+                        Jawaban = hasil_akhir.waktu1()
+                        print(Jawaban)
+                        continue
+                    elif(Kecepatan_Detik == 999):
+                        Jawaban = hasil_akhir.waktu2()
+                        print(Jawaban)
+                        continue
+                    elif(Percepatan == 999):
+                        Jawaban = hasil_akhir.waktu3()
+                        print(Jawaban)
+
+                elif (PilihanGJB == 4):
+                    if(Kecepatan_Detik == 999):
+                        Jawaban = hasil_akhir.ketinggian1()
+                        print(Jawaban)
+                        continue
+                    elif(Waktu == 999):
+                        Jawaban = hasil_akhir.ketinggian2()
+                        print(Jawaban)
+                        continue
+                elif (PilihanGJB == 5):
+                    continue
+            elif(PilihanGJB==5):
+                continue
+            else:
+                print("Masukkan Angka Yang Benar")
+
+        elif (pilihan == 4):
+            break
